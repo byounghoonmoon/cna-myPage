@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myPage
+  name: mypage
+  namespace: istio-cb-ns
   labels:
-    app: myPage
+    app: mypage
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myPage
+      app: mypage
   template:
     metadata:
       labels:
-        app: myPage
+        app: mypage
     spec:
       containers:
-        - name: myPage
-          image: username/myPage:latest
+        - name: mypage
+          image: 052937454741.dkr.ecr.ap-southeast-1.amazonaws.com/user14-cna-mypage:latest 
           ports:
             - containerPort: 8080
           readinessProbe:
